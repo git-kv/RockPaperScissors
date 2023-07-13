@@ -1,10 +1,15 @@
-const buttons = document.querySelectorAll('button');
+const playerButtons = document.querySelectorAll('.playerChoiceBtn');
 
-buttons.forEach(button => {
+playerButtons.forEach(button => {
     button.addEventListener('click', () => {
-        playRound(button.id);
+        if (playerScore < 5 && computerScore < 5){
+            playRound(button.id);
+        }
     });
 });
+
+let playerScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     let computerChoices = ["rock","paper","scissors"];
@@ -45,21 +50,34 @@ function playRound(playerSelection) {
     }
     else if (playerSelection == "rock" & computerSelection == "paper"){
         resultInfo.textContent="Computer wins! Paper beats rock.";
+        computerScore++;
     }
     else if (playerSelection == "paper" & computerSelection == "scissors"){
         resultInfo.textContent="Computer wins! Scissors beats paper.";
+        computerScore++;
     }
     else if (playerSelection == "scissors" & computerSelection == "rock"){
         resultInfo.textContent="Computer wins! Rock beats scissors.";
+        computerScore++;
     }
     else if (playerSelection == "rock" & computerSelection == "scissors"){
         resultInfo.textContent="Player wins! Rock beats scissors.";
+        playerScore++;
     }
     else if (playerSelection == "paper" & computerSelection == "rock"){
         resultInfo.textContent="Player wins! Paper beats rock.";
+        playerScore++;
     }
     else if (playerSelection == "scissors" & computerSelection == "paper"){
         resultInfo.textContent="Player wins! Scissors beats paper.";
+        playerScore++;
+    }
+
+    if (playerScore == 5) {
+        resultInfo.textContent="Player has 5 points! Player wins the game!"
+    }
+    else if (computerScore == 5) {
+        resultInfo.textContent="Computer has 5 points! Computer wins the game!"
     }
 }
 /*
