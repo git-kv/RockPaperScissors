@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="hero">
@@ -14,26 +15,36 @@
     </div>
 
     <div class = "playerButtons">
-        <button id="rock" class="playerChoiceBtn">Rock</button>
-        <button id="paper" class="playerChoiceBtn">Paper</button>
-        <button id="scissors" class="playerChoiceBtn">Scissors</button>
+        <button id="rock" class="playerChoiceBtn">ROCK</button>
+        <button id="paper" class="playerChoiceBtn">PAPER</button>
+        <button id="scissors" class="playerChoiceBtn">SCISSORS</button>
     </div>
 
     <div class="choices">
-        <h2 class="player-name player">Player</h2>
-        <p class="playerChoice">Updates based on button</p>
+        <div class="player-container">
+            <h2 class="player-name player">Player: -</h2>
+            <p class="playerChoice"></p>
+        </div>
 
-        <h2 class="player-name computer">Computer</h2>
-        <p class="computerChoice">Updates randomly</p>
+        <div class="player-container">
+            <h2 class="player-name computer">Computer: -</h2>
+            <p class="computerChoice"></p>
+        </div>
     </div>
 
     <div class="results">
         <h2>Results</h2>
-        <p class="result-text">Changes per round and game completion</p>
+        <p class="result-text"></p>
     </div>
 
-    <div>
+    <div class="replay-container">
         <button class="replay">New Game</button>
+    </div>
+
+    <div class="footer">
+        <a href="google.com">RPS Repo</a>
+        <p>Copyright Keith Voelker 2023</p>
+        <a href="google.com">My Projects</a>
     </div>
 </body>
 </html>

@@ -64,8 +64,8 @@ function playRound(playerSelection) {
 function resetScores(){
     playerScore = 0;
     computerScore = 0;
-    playerScoreDisplay.textContent = `Player`;
-    computerScoreDisplay.textContent = `Computer`;
+    playerScoreDisplay.textContent = `Player: -`;
+    computerScoreDisplay.textContent = `Computer: -`;
     resultInfo.textContent = "Scores reset.";
     playerChoiceInfo.textContent = "";
     computerChoiceInfo.textContent = "";
